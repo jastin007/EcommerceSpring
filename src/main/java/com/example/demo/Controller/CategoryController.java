@@ -16,13 +16,11 @@ import java.util.List;
 @RequestMapping("api/categories")
 public class CategoryController {
 
-
     private final ICategoryService categoryServices;
 
     CategoryController(ICategoryService categoryServices){
-          this.categoryServices = categoryServices;
+        this.categoryServices = categoryServices;
     }
-
     @PostMapping
     public String getPostCategory(){
         return "Post Electronics";
@@ -35,4 +33,5 @@ public class CategoryController {
     public List<CategoryDTO> getAllCategories() throws IOException {
         return this.categoryServices.getAllCategories();
     }
+
 }

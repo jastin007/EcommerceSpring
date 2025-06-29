@@ -1,15 +1,15 @@
-package com.example.demo.Gateway;
+package com.example.demo.Gateway.Api;
 
-import com.example.demo.Gateway.Api.FakeStoreCategoryApi;
 import com.example.demo.dto.CategoryDTO;
 import com.example.demo.dto.FakeStoreCategoryResponseDTO;
+import com.example.demo.dto.ProductDTO;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
 
 @Component
-public class FakeStoreCategoryGateway implements ICategoryGateway{
+public class FakeStoreCategoryGateway implements ICategoryGateway {
 
     private final FakeStoreCategoryApi fakeStoreCategoryApi;
 
@@ -26,4 +26,5 @@ public class FakeStoreCategoryGateway implements ICategoryGateway{
         return response.getCategories().stream().map(category -> CategoryDTO.builder().name(category)
                 .build()).toList();
     }
+
 }

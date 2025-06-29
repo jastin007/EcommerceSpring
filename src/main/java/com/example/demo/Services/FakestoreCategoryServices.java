@@ -1,8 +1,9 @@
 package com.example.demo.Services;
 
 //import org.springframework.stereotype.Component;
-import com.example.demo.Gateway.ICategoryGateway;
+import com.example.demo.Gateway.Api.ICategoryGateway;
 import com.example.demo.dto.CategoryDTO;
+import com.example.demo.dto.ProductDTO;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -19,4 +20,6 @@ public class FakestoreCategoryServices implements ICategoryService {
     public List<CategoryDTO> getAllCategories() throws IOException {
         return this.categoryGateway.getAllCategories();
     }
+
+
 }
