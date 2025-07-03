@@ -1,5 +1,6 @@
 package com.example.demo.Gateway.Api;
 
+import com.example.demo.Mappers.GetAllCategoriesMapper;
 import com.example.demo.dto.CategoryDTO;
 import com.example.demo.dto.FakeStoreCategoryResponseDTO;
 import com.example.demo.dto.ProductDTO;
@@ -23,8 +24,9 @@ public class FakeStoreCategoryGateway implements ICategoryGateway {
         if(response==null){
             throw new IOException("Failed to fetch categories from fakestore api");
         }
-        return response.getCategories().stream().map(category -> CategoryDTO.builder().name(category)
-                .build()).toList();
+//        return response.getCategories().stream().map(category -> CategoryDTO.builder().name(category)
+//                .build()).toList();
+          return GetAllCategoriesMapper.toCategoryDto(response);
     }
 
 }
